@@ -1,0 +1,71 @@
+﻿@model IEnumerable<SneakerDAL.Shoes>
+
+@{
+    ViewData["Title"] = "GetShoes";
+}
+
+<h1>GetShoes</h1>
+
+<p>
+    <a asp-action="Add">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.shoeId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Gender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shoePrice)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shoeStyle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shoeName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shoeColor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.shoeSize)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.shoeId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Gender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shoePrice)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shoeStyle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shoeName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shoeColor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.shoeSize)
+            </td>
+            <td>
+                    @Html.ActionLink("Edit", "Update", new { shoeId=item.shoeId }) |
+                    @Html.ActionLink("ShoeDetails","ShoeDetails", new { shoeId=item.shoeId }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

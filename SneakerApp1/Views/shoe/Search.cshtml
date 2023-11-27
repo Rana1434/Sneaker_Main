@@ -1,0 +1,60 @@
+﻿@model SneakerDAL.Shoes
+
+@{
+    ViewData["Title"] = "Search";
+}
+
+<h1>Search</h1>
+
+<div>
+    <h4>Shoes</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.shoeId)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.shoeId)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.shoePrice)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.shoePrice)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.shoeStyle)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.shoeStyle)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.shoeName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.shoeName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.shoeColor)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.shoeColor)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.shoeSize)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.shoeSize)
+        </dd>
+    </dl>
+</div>
+<div>
+    @Html.ActionLink("Edit", "Update", new { shoeId=Model.shoeId }) |
+    <a asp-action="GetShoes">Back to List</a>
+</div>
